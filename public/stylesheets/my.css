@@ -18,6 +18,9 @@ button {
 button:hover {
     opacity: 0.7;
 }
+.wrap {
+    display: inline-block;
+}
 .header {
     width: 100%;
     height: 56px;
@@ -54,13 +57,14 @@ button:hover {
     margin-top: 12px;
 }
 .contentcover {
-    background-color: #ebeef1;
+    background-color: #dddfe4;
     width: 100%;
     margin: 0;
     padding: 0;
+    display: inline-block;
 }
 .bgimg {
-    width: 1600px;
+    width: 1263px;
     height: 240px;
     background-color: darkcyan;
     margin-top: 6px;
@@ -91,4 +95,40 @@ button:hover {
     background-color: #46cfa7;
     font-size: 14px;
     color: #fff;
+}
+.listmenucv {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.listmenu {
+    text-align: left;
+    width: 260px;
+}
+.listmenu a {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px;
+}
+.listmenu a:hover {
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.listmenu a:active {
+    color: #46cfa7;
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.mainboard {
+    border-top: 0.5px solid #dddfe4;
+    border-bottom: 0.5px solid #dddfe4;
+}
+.mainbdtitle {
+    font-size: 11px;
+    opacity: 0.5;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
