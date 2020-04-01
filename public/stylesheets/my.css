@@ -5,6 +5,18 @@ html body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+select {
+    outline: none;
+}
+input {
+    outline: none;
+}
+ul {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -71,20 +83,20 @@ button:hover {
 }
 .maincover {
     display: inline-block;
-}
-.maincntcover {
     width: 1050px;
     margin-top: -40px;
 }
+.listcv {
+    margin-right: 15px;
+    float: left;
+}
+.subcv {
+    float: left;
+}
 .list {
     width: 300px;
-    margin-right: 10px;
     border: 0;
     background-color: #fff;
-}
-.subheader {
-    width: 690x;
-    margin-bottom: 5px;
 }
 .listheader {
     padding: 16px;
@@ -131,4 +143,78 @@ button:hover {
     opacity: 0.5;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.subheader {
+    width: 730px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.sbhdinfo {
+    padding-top: 18px;
+    padding-bottom: 17px;
+    text-align: left;
+}
+.sbhdtitle {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.submenu {
+    text-align: left;
+}
+.submnlink {
+    display: inline-block;
+    width: 340px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0;
+}
+li a {
+    font-size: 14px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-right: 20px;
+}
+li a:hover {
+    background-color: #dddfe4;
+    border-radius: 4px;
+}
+li :active {
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.sbhdsearch {
+    display: inline-block;
+    background-color:#ebeef1;
+    border-radius: 4px;
+    border: 0.5px solid #dddfe4;
+    padding-left: 1px;
+    padding-right: 1px;
+
+}
+.selectsearch {
+    height: 36.5px;
+    width: 130px;
+    margin-top: 1px;
+    padding-left: 12px;
+    font-size: 14px;
+    color: #A4A4A4;
+    vertical-align: baseline;
+    border: 0;
+}
+.inputsearch {
+    background-color:#ebeef1;
+    height: 35px;
+    border: 0;
+    font-size: 14px;
+    margin: 0;
+    width: 170px;
+    padding-right: 20px;
+    padding-left: 16px;
 }
