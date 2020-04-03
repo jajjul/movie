@@ -165,7 +165,7 @@ button:hover {
 }
 .submnlink {
     display: inline-block;
-    width: 340px;
+    width: 320px;
     padding-left: 16px;
     padding-right: 16px;
     margin: 0;
@@ -199,7 +199,7 @@ li :active {
 
 }
 .selectsearch {
-    height: 36.5px;
+    height: 36px;
     width: 130px;
     margin-top: 1px;
     padding-left: 12px;
@@ -207,6 +207,7 @@ li :active {
     color: #A4A4A4;
     vertical-align: baseline;
     border: 0;
+    box-sizing: border-box;
 }
 .inputsearch {
     background-color:#ebeef1;
@@ -214,7 +215,100 @@ li :active {
     border: 0;
     font-size: 14px;
     margin: 0;
-    width: 170px;
-    padding-right: 20px;
+    width: 160px;
+    padding-right: 50px;
     padding-left: 16px;
+}
+.articlelist {
+    width: 730px;
+}
+.articlelist {
+    background-color: #fff;
+}
+.article-list-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    border-bottom: 0.5px solid #ebeef1;
+}
+.article-list-bdname {
+    display: inline-block;
+    width: 60px;
+    padding-left: 12px;
+    text-align: center;
+}
+.article-list-cnt {
+    display: inline-table;
+    width: 600px;
+    vertical-align: 0.1px;
+}
+.article-list-titlecv {
+    display: table-cell;
+    text-align: left;
+    width: 350px;
+    font-size: 14px;
+}
+.article-list-title {
+}
+.article-list-title em {
+    color: teal;
+    vertical-align: 1px;
+}
+.writer {
+    display: table-cell;
+    color: #98a0a7;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+.article-list-date {
+    display: table-cell;
+    color: #98a0a7;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+.article-list-vote {
+    display: table-cell;
+    color: #98a0a7;
+    font-size: 14;
+    width: 80px;
+    text-align: center;
+}
+.articlelist :hover {
+    background-color: #fafafa;
+}
+.article-list-paging {
+    background-color: #f8f9fa;
+}
+.article-list-pagingcnt {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.article-list-paginglist {
+}
+.paging-writingbtn {
+    width: 150px;
+    text-align: left;
+}
+.paging-listbtn {
+    width: 150px;
+    text-align: right;
+}
+.paging-void {
+    width: 400px;
+}
+.a-btn {
+    background-color: #fff;
+    text-align: center;
+    padding: 7px;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #dddfe4;
+    border-radius: 4px;
 }
