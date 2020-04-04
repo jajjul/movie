@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET boards listing. */
+/* index.ejs <form action="movies"> */
 router.get('/', function(req, res, next) {
   let search = req.query.search;
   let target = req.query.target;
