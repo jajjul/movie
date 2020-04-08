@@ -42,6 +42,7 @@ button:hover {
 }
 .cover{
     display: inline-block;
+    text-align: center;
 }
 .headercnt {
     width: 1050px;
@@ -74,8 +75,10 @@ button:hover {
     margin: 0;
     padding: 0;
     display: inline-block;
+    text-align: center;
 }
 .bgimg {
+    display: inline-block;
     width: 1263px;
     height: 240px;
     background-color: darkcyan;
@@ -143,4 +146,107 @@ button:hover {
     opacity: 0.5;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.article-header {
+    padding-top: 24px;
+    padding-bottom: 18px;
+    padding-left: 16px;
+    padding-top: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #ebeef1;
+}
+.article-title {
+    text-align: left;
+    font-size: 24px;
+    width: 714px;
+}
+.article-meta {
+    width: 714px;
+    height: 24px;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+em {
+    font-size: 20px;
+    vertical-align: 3.5px;
+    margin-left: 5px;
+    color: teal;
+}
+.aricle-meta-itemlistcv {
+    display: inline-block;
+}
+.article-meta-itemlist {
+    display: inline-table;
+    width: 350px;
+}
+.article-meta-writer {
+    padding-left: 10px;
+    color: #98a0a7;
+    text-align: left;
+    width: 400px;
+    display: inline-block;
+    font-size: 16px;
+}
+.article-meta-date {
+    display: table-cell;
+    color: #98a0a7;
+    text-align: right;
+    width: 100px;
+}
+.article-meta-viewcnt {
+    display: table-cell;
+    color: #98a0a7;
+    text-align: right;
+    width: 100px;
+}
+.article-meta-vote {
+    display: table-cell;
+    color: #98a0a7;
+    text-align: right;
+    width: 80px;
+}
+.article-content {
+    padding-top: 24px;
+    padding-bottom: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #ebeef1;
+    text-align: left;
+}
+.article-content p {
+    margin-bottom: 10px;
+    margin-top : 10px;
+}
+.article-box {
+    text-align: center;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.article-vote-list {
+    display: inline-block;
+}
+td button {
+    background-color: #fff;
+    text-align: center;
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+}
+button span {
+    display: inline;
+}
+.vote-cnt {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.article-vote-upbtn :hover {
+    border: 1px solid limegreen;
+}
+.article-vote-downbtn :hover {
+    border: 1px solid red;
 }

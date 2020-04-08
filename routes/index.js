@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/:category', function (req, res, next) {
+router.get('/', function (req, res, next) {
   let category = req.params.category;
   res.render('index', {
     title: '영화토크방', list: [{

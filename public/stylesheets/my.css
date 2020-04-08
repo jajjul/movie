@@ -42,6 +42,7 @@ button:hover {
 }
 .cover{
     display: inline-block;
+    text-align: center;
 }
 .headercnt {
     width: 1050px;
@@ -74,8 +75,10 @@ button:hover {
     margin: 0;
     padding: 0;
     display: inline-block;
+    text-align: center;
 }
 .bgimg {
+    display: inline-block;
     width: 1263px;
     height: 240px;
     background-color: darkcyan;
