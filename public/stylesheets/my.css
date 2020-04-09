@@ -27,9 +27,6 @@ button {
     cursor: pointer;
     outline: none;
 }
-button:hover {
-    opacity: 0.7;
-}
 .wrap {
     display: inline-block;
 }
@@ -68,6 +65,9 @@ button:hover {
     width: 80px;
     color: #fff;
     margin-top: 12px;
+}
+.headerloginbtn:hover {
+    opacity: 0.7;
 }
 .contentcover {
     background-color: #dddfe4;
@@ -110,6 +110,9 @@ button:hover {
     background-color: #46cfa7;
     font-size: 14px;
     color: #fff;
+}
+.listloginbtn:hover {
+    opacity: 0.7;
 }
 .listmenucv {
     padding-top: 10px;

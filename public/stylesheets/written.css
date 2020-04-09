@@ -27,9 +27,6 @@ button {
     cursor: pointer;
     outline: none;
 }
-button:hover {
-    opacity: 0.7;
-}
 .wrap {
     display: inline-block;
 }
@@ -68,6 +65,9 @@ button:hover {
     width: 80px;
     color: #fff;
     margin-top: 12px;
+}
+.headerloginbtn:hover {
+    opacity: 0.7;
 }
 .contentcover {
     background-color: #dddfe4;
@@ -111,6 +111,9 @@ button:hover {
     font-size: 14px;
     color: #fff;
 }
+.listloginbtn:hover {
+    opacity: 0.7;
+}
 .listmenucv {
     padding-top: 10px;
     padding-left: 20px;
@@ -147,6 +150,174 @@ button:hover {
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.subheader {
+    width: 730px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.sbhdinfo {
+    padding-top: 18px;
+    padding-bottom: 17px;
+    text-align: left;
+}
+.sbhdtitle {
+    margin: 0;
+    padding-left: 16px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.submenu {
+    text-align: left;
+}
+.submnlink {
+    display: inline-block;
+    width: 320px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0;
+}
+li a {
+    font-size: 14px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-right: 20px;
+}
+li a:hover {
+    background-color: #dddfe4;
+    border-radius: 4px;
+}
+li :active {
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.sbhdsearch {
+    display: inline-block;
+    background-color:#ebeef1;
+    border-radius: 4px;
+    border: 0.5px solid #dddfe4;
+    padding-left: 1px;
+    padding-right: 1px;
+
+}
+.selectsearch {
+    height: 36px;
+    width: 130px;
+    margin-top: 1px;
+    padding-left: 12px;
+    font-size: 14px;
+    color: #A4A4A4;
+    vertical-align: baseline;
+    border: 0;
+    box-sizing: border-box;
+}
+.inputsearch {
+    background-color:#ebeef1;
+    height: 35px;
+    border: 0;
+    font-size: 14px;
+    margin: 0;
+    width: 160px;
+    padding-right: 50px;
+    padding-left: 16px;
+}
+.articlelist {
+    width: 730px;
+}
+.articlelist {
+    background-color: #fff;
+}
+.article-list-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+    border-bottom: 0.5px solid #ebeef1;
+}
+.article-list-bdname {
+    display: inline-block;
+    width: 60px;
+    padding-left: 12px;
+    text-align: center;
+}
+.article-list-cnt {
+    display: inline-table;
+    width: 600px;
+    vertical-align: 0.1px;
+}
+.article-list-titlecv {
+    display: table-cell;
+    text-align: left;
+    width: 350px;
+    font-size: 14px;
+}
+.article-list-title {
+}
+.article-list-title em {
+    color: teal;
+    vertical-align: 1px;
+}
+.writer {
+    display: table-cell;
+    color: #98a0a7;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+.article-list-date {
+    display: table-cell;
+    color: #98a0a7;
+    width: 100px;
+    font-size: 14px;
+    text-align: center;
+    margin-right: 10px;
+}
+.article-list-vote {
+    display: table-cell;
+    color: #98a0a7;
+    font-size: 14;
+    width: 80px;
+    text-align: center;
+}
+.articlelist :hover {
+    background-color: #fafafa;
+}
+.article-list-paging {
+    background-color: #f8f9fa;
+}
+.article-list-pagingcnt {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.article-list-paginglist {
+}
+.paging-writingbtn {
+    width: 150px;
+    text-align: left;
+}
+.paging-listbtn {
+    width: 150px;
+    text-align: right;
+}
+.paging-void {
+    width: 400px;
+}
+.a-btn {
+    background-color: #fff;
+    text-align: center;
+    padding: 7px;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #dddfe4;
+    border-radius: 4px;
+}
 .article-header {
     padding-top: 24px;
     padding-bottom: 18px;
@@ -167,7 +338,7 @@ button:hover {
     text-align: left;
     font-size: 14px;
 }
-em {
+.article-title-em {
     font-size: 20px;
     vertical-align: 3.5px;
     margin-left: 5px;
@@ -178,32 +349,34 @@ em {
 }
 .article-meta-itemlist {
     display: inline-table;
-    width: 350px;
+    width: 300px;
 }
 .article-meta-writer {
     padding-left: 10px;
     color: #98a0a7;
     text-align: left;
-    width: 400px;
+    width: 450px;
     display: inline-block;
     font-size: 16px;
 }
 .article-meta-date {
     display: table-cell;
     color: #98a0a7;
-    text-align: right;
-    width: 100px;
+    text-align: center;
+    width: 80px;
+    border-right: 0.5px solid #98a0a7;
 }
 .article-meta-viewcnt {
     display: table-cell;
     color: #98a0a7;
-    text-align: right;
-    width: 100px;
+    text-align: center;
+    border-right: 0.5px solid #98a0a7;
+    width: 80px;
 }
 .article-meta-vote {
     display: table-cell;
     color: #98a0a7;
-    text-align: right;
+    text-align: center;
     width: 80px;
 }
 .article-content {
@@ -224,6 +397,7 @@ em {
     background-color: #fff;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 .article-vote-list {
     display: inline-block;
@@ -237,16 +411,100 @@ td button {
     width: 100px;
     height: 40px;
 }
-button span {
-    display: inline;
-}
 .vote-cnt {
     margin-left: 5px;
     margin-right: 5px;
 }
 .article-vote-upbtn :hover {
-    border: 1px solid limegreen;
+    background-color: #A9F5D0;
 }
 .article-vote-downbtn :hover {
-    border: 1px solid red;
+    background-color: #F5A9BC;
+}
+.reply-header {
+    background-color: #fff;
+    padding: 16px;
+    height: 30px;
+    text-align: left;
+    border-bottom: 1px solid #ebeef1;
+}
+.reply-cnt {
+    color: red;
+    margin-left: 5px;
+}
+.reply {
+    background-color: #fff;
+    padding: 12px;
+    text-align: left;
+}
+.reply-writer {
+    margin-left: 10px;
+    font-weight: 700;
+    color: #045FB4;
+}
+.comment {
+    margin-left: 15px;
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.comment-sub {
+    height: 20px;
+    margin-left: 30px;
+    font-size: 12px;
+}
+.comment-date {
+    color: #98a0a7;
+}
+.comment-reply {
+    margin-left: 5px;
+}
+.reply-cv :hover {
+    background-color: #fafafa;
+}
+.reply-cv {
+    border-bottom: 1px solid #ebeef1;
+}
+.reg-comment {
+    padding: 12px;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+.reg-btn {
+    background-color: #fff;
+    text-align: center;
+    padding: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    width: 100px;
+    height: 80px;
+    margin-left: 14px;
+}
+p {
+    margin: 0;
+}
+.reg-comment-content {
+    width: 575px;
+    font-size: 14px;
+    height: 80px;
+    resize: none;
+}
+.reg-btn:hover {
+    border-color: #01DFD7;
+}
+.reg-comment-reply {
+    display: none;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-top: 16px;
+    padding-top: 16px;
+    background-color: #fff;
+}
+.comment-reply-btn {
+    padding: 0;
+    color: #FE642E;
+    border: 0;
+    font-size: 12px;
+    background-color: transparent;
 }
