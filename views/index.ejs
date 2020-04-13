@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/my.css' />
+    <script type="text/javascript"></script>
   </head>
   <body>
     <div class="wrap">
@@ -13,7 +14,7 @@
               <a href="#"><span>MovieTalkRoom</span></a>
             </div>
             <div class="rightheader">
-              <button class="headerloginbtn">로그인</button></a>
+              <button class="headerloginbtn"><a href="http://localhost:3000/login">로그인</a></button>
             </div>
           </div>
         </div>
@@ -26,7 +27,7 @@
           <div class="listcv">
             <div class="list">
               <div class="listheader">
-                <button class="listloginbtn">로그인</button>
+                <button class="listloginbtn"><a href="http://localhost:3000/login">로그인</a></button>
               </div>
               <div class="listmenucv">
                 <div class="listmenu">
@@ -63,7 +64,7 @@
                   </li>
                 </ul>
                 <div class="sbhdsearch">
-                  <form action="movies">
+                  <form action="">
                     <label style="padding: 0;">
                       <select name="target" class="selectsearch">
                         <option value="title">제목</option>
@@ -76,31 +77,35 @@
               </div>
             </div>
             <section class="articlelist">
-              <article class="article-list-item">
-                <div class="article-list-bdname">
-                  리뷰
-                </div>
-                <div class="article-list-cnt">
-                  <div class="article-list-titlecv">
-                    <a href="#">
-                      <div class="article-list-title">
-                        <span>국제시장 리뷰</span>
-                        <em>[2]</em>
-                      </div>
-                    </a>  
+              <div class="article-hover">
+                <% for(var i=0; i < list.length; i++) { %>
+                <article class="article-list-item">
+                  <div class="article-list-bdname">
+                  <%= list[i].type %>
                   </div>
-                  <div class="writer">
-                    <a href="#">박태영</a>
+                  <div class="article-list-cnt">
+                    <div class="article-list-titlecv">
+                      <a href="#">
+                        <div class="article-list-title">
+                          <span><%= list[i].contentTitle %></span>
+                          <em>[<%= list[i].commentCount %>]</em>
+                        </div>
+                      </a>  
+                    </div>
+                    <div class="writer">
+                      <a href="#"><%= list[i].author %></a>
+                    </div>
+                    <div class="article-list-date">
+                      <span><%= list[i].date %></span>
+                    </div>
+                    <div class="article-list-vote">
+                      <span>△</span>
+                      <span><%= list[i].voteCount %></span>
+                    </div>
                   </div>
-                  <div class="article-list-date">
-                    <span>2020.04.02</span>
-                  </div>
-                  <div class="article-list-vote">
-                    <span>△</span>
-                    <span>25</span>
-                  </div>
-                </div>
-              </article>
+                </article>
+                <% } %>
+              </div>
               <section class="article-list-paging">
                 <div class="article-list-pagingcnt">
                   <table class="article-list-paginglist">
