@@ -3,7 +3,10 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/my.css' />
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    window.onload = () => {
+    };
+    </script>
   </head>
   <body>
     <div class="wrap">
@@ -11,10 +14,10 @@
         <div class="cover">
           <div class="headercnt">
             <div class="leftheader">
-              <a href="#"><span>MovieTalkRoom</span></a>
+              <a href="http://localhost:3000/"><span>MovieTalkRoom</span></a>
             </div>
             <div class="rightheader">
-              <button class="headerloginbtn"><a href="http://localhost:3000/login">로그인</a></button>
+              <button class="headerloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
             </div>
           </div>
         </div>
@@ -27,7 +30,7 @@
           <div class="listcv">
             <div class="list">
               <div class="listheader">
-                <button class="listloginbtn"><a href="http://localhost:3000/login">로그인</a></button>
+                <button class="listloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
               </div>
               <div class="listmenucv">
                 <div class="listmenu">

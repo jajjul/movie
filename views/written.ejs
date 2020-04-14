@@ -3,6 +3,22 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/written.css'/>
+    <script type="text/javascript">
+      window.onload = () => {
+        var regReplyDisplay = true;
+        var reply = document.getElementById('reply');
+        reply.onclick = () => {
+          var regReply = document.getElementById('regReply');
+          if (regReplyDisplay == true) {
+              regReply.style.display = "block";
+              regReplyDisplay = false;
+          } else {
+              regReply.style.display = "none";
+              regReplyDisplay = true;
+        }
+      }
+    };
+    </script>
   </head>
   <body>
     <div class="wrap">
@@ -10,10 +26,10 @@
         <div class="cover">
           <div class="headercnt">
             <div class="leftheader">
-              <a href="#"><span>MovieTalkRoom</span></a>
+              <a href="http://localhost:3000/"><span>MovieTalkRoom</span></a>
             </div>
             <div class="rightheader">
-              <button class="headerloginbtn">로그인</button></a>
+              <button class="headerloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
             </div>
           </div>
         </div>
@@ -26,7 +42,7 @@
           <div class="listcv">
             <div class="list">
               <div class="listheader">
-                <button class="listloginbtn">로그인</button>
+                <button class="listloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
               </div>
               <div class="listmenucv">
                 <div class="listmenu">
@@ -115,22 +131,22 @@
                 <div class="comment-sub">
                   <span class="comment-date">2020.04.09</span>
                   <span class="comment-reply">
-                    <button class="comment-reply-btn">답글</button>
+                    <button class="comment-reply-btn" id="reply">답글</button>
                   </span>
                 </div>
+                <div class="reg-comment-reply" id="regReply">
+                  <table>
+                    <tr>
+                      <td>
+                        <textarea cols="30" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
+                      </td>
+                      <td>
+                        <button class="reg-btn">등록</button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
               </div>
-            </div>
-            <div class="reg-comment-reply">
-              <table>
-                <tr>
-                  <td>
-                    <textarea cols="30" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
-                  </td>
-                  <td>
-                    <button class="reg-btn">등록</button>
-                  </td>
-                </tr>
-              </table>
             </div>
             <div class="reg-comment">
               <table>
@@ -171,31 +187,35 @@
               </div>
             </div>
             <section class="articlelist">
-              <article class="article-list-item">
-                <div class="article-list-bdname">
-                  리뷰
-                </div>
-                <div class="article-list-cnt">
-                  <div class="article-list-titlecv">
-                    <a href="#">
-                      <div class="article-list-title">
-                        <span>국제시장 리뷰</span>
-                        <em>[2]</em>
-                      </div>
-                    </a>  
+              <div class="article-hover">
+                <% for(var i=0; i < list.length; i++) { %>
+                <article class="article-list-item">
+                  <div class="article-list-bdname">
+                  <%= list[i].type %>
                   </div>
-                  <div class="writer">
-                    <a href="#">박태영</a>
+                  <div class="article-list-cnt">
+                    <div class="article-list-titlecv">
+                      <a href="#">
+                        <div class="article-list-title">
+                          <span><%= list[i].contentTitle %></span>
+                          <em>[<%= list[i].commentCount %>]</em>
+                        </div>
+                      </a>  
+                    </div>
+                    <div class="writer">
+                      <a href="#"><%= list[i].author %></a>
+                    </div>
+                    <div class="article-list-date">
+                      <span><%= list[i].date %></span>
+                    </div>
+                    <div class="article-list-vote">
+                      <span>△</span>
+                      <span><%= list[i].voteCount %></span>
+                    </div>
                   </div>
-                  <div class="article-list-date">
-                    <span>2020.04.02</span>
-                  </div>
-                  <div class="article-list-vote">
-                    <span>△</span>
-                    <span>25</span>
-                  </div>
-                </div>
-              </article>
+                </article>
+                <% } %>
+              </div>
               <section class="article-list-paging">
                 <div class="article-list-pagingcnt">
                   <table class="article-list-paginglist">

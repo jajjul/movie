@@ -227,8 +227,6 @@ li :active {
 }
 .articlelist {
     width: 730px;
-}
-.articlelist {
     background-color: #fff;
 }
 .article-list-item {
@@ -239,9 +237,12 @@ li :active {
 }
 .article-list-bdname {
     display: inline-block;
-    width: 60px;
+    width: 70px;
+    height: 30px;
     padding-left: 12px;
     text-align: center;
+    font-size: 16px;
+    padding-top: 5px;
 }
 .article-list-cnt {
     display: inline-table;
@@ -251,10 +252,11 @@ li :active {
 .article-list-titlecv {
     display: table-cell;
     text-align: left;
-    width: 350px;
+    width: 380px;
     font-size: 14px;
 }
 .article-list-title {
+    margin-left: 15px;
 }
 .article-list-title em {
     color: teal;
@@ -263,15 +265,15 @@ li :active {
 .writer {
     display: table-cell;
     color: #98a0a7;
-    width: 100px;
+    width: 90px;
     font-size: 14px;
-    text-align: center;
+    text-align: left;
     margin-right: 10px;
 }
 .article-list-date {
     display: table-cell;
     color: #98a0a7;
-    width: 100px;
+    width: 90px;
     font-size: 14px;
     text-align: center;
     margin-right: 10px;
@@ -280,10 +282,10 @@ li :active {
     display: table-cell;
     color: #98a0a7;
     font-size: 14;
-    width: 80px;
-    text-align: center;
+    width: 60px;
+    text-align: left;
 }
-.articlelist :hover {
+.article-hover :hover {
     background-color: #fafafa;
 }
 .article-list-paging {
