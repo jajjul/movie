@@ -7,10 +7,15 @@
   <script type="text/javascript">
     var page = <%= page %>;
     var size = <%= size %>;
+    var total = <%= total %>;
     window.onload = () => {
       var next = document.getElementById("next");
       next.onclick = () => {
-        location.href = '?page=' + (page + 1) + '&size=' + size;
+        if (total < (page + 1) * size) {
+            alert("마지막입니다.")
+        } else {
+          location.href = '?page=' + (page + 1) + '&size=' + size;
+        }
       }
     };
   </script>

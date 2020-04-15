@@ -15,6 +15,14 @@ router.get('/', async (req, res, next) => {
     page = 0
   }
 
+  const count = await pool.query(`
+  select count(*) as total
+  from movie`);
+  const total = count[0][0].total;
+
+  console.log(count);
+  console.log(total);
+
   const data = await pool.query(`
   select
   movie_id as movieId
@@ -51,6 +59,7 @@ router.get('/', async (req, res, next) => {
     title: '영화토크방', 
     page: page,
     size: size,
+    total: total,
     list: list
   });
 });
