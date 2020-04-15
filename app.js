@@ -16,12 +16,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
-app.use('/movies', require('./routes/movies'));
-app.use('/written', require('./routes/written'));
-app.use('/login', require('./routes/login'));
-app.use('/join', require('./routes/join'));
+app.use('/', require('./src/routes/index'));
+app.use('/users', require('./src/routes/users'));
+app.use('/movies', require('./src/routes/movies'));
+app.use('/written', require('./src/routes/written'));
+app.use('/login', require('./src/routes/login'));
+app.use('/join', require('./src/routes/join'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
