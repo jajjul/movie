@@ -253,7 +253,7 @@ li :active {
     display: table-cell;
     text-align: left;
     width: 380px;
-    font-size: 14px;
+    font-size: 13px;
 }
 .article-list-title {
     margin-left: 15px;
@@ -266,8 +266,8 @@ li :active {
     display: table-cell;
     color: #98a0a7;
     width: 90px;
-    font-size: 14px;
-    text-align: left;
+    font-size: 12px;
+    text-align: center;
     margin-right: 10px;
 }
 .article-list-date {
@@ -319,4 +319,5 @@ li :active {
     font-size: 14px;
     border: 1px solid #dddfe4;
     border-radius: 4px;
+    cursor: pointer;
 }

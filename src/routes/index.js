@@ -28,11 +28,11 @@ router.get('/', async (req, res, next) => {
   movie_id as movieId
   ,title as contentTitle
   ,comment_cnt as commentCount
-  ,reg_user_id as authorId
-  ,reg_user_name as author
-  ,date_format(reg_date, '%Y.%m.%d') as date
-  ,recommendation_cnt as voteCount
-  ,type as type
+  ,reg_user_id as userId
+  ,reg_nickname as author
+  ,date_format(reg_dt, '%Y.%m.%d') as date
+  ,vote_cnt as voteCount
+  ,reg_type as type
   from movie
   limit ? offset ?`, [size, page * size]);
 
@@ -40,15 +40,27 @@ router.get('/', async (req, res, next) => {
   for (var i = 0; i < list.length; i++) {
     var type = list[i].type;
     switch (type) {
-      case "REVIEW":
+      case "리뷰":
         list[i].type = "리뷰";
         break;
-      case "FREE":
-        list[i].type = "자유";
+      case "한국 영화":
+        list[i].type = "한국 영화";
         break;
-      case "USA":
+      case "미국 영화":
         list[i].type = "미국 영화";
         break;
+      case "일본 영화":
+        list[i].type = "일본 영화";
+        break;
+      case "중국 영화":
+          list[i].type = "중국 영화";
+          break;  
+      case "토론":
+          list[i].type = "토론";
+          break;
+      case "자유":
+          list[i].type = "자유";
+          break;
       default:
         list[i].type = "";
         break;

@@ -22,6 +22,7 @@ app.use('/movies', require('./src/routes/movies'));
 app.use('/written', require('./src/routes/written'));
 app.use('/login', require('./src/routes/login'));
 app.use('/join', require('./src/routes/join'));
+app.use('/helpid', require('./src/routes/helpid'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
