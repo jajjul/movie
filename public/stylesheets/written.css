@@ -497,10 +497,8 @@ p {
 }
 .reg-comment-reply {
     display: none;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-top: 16px;
-    padding-top: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
     background-color: #fff;
 }
 .comment-reply-btn {
@@ -509,4 +507,15 @@ p {
     border: 0;
     font-size: 12px;
     background-color: transparent;
+}
+.in-reply {
+    border-top: 1px solid #ebeef1;
+}
+.in-reply-mark {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 15px;
+}
+.reg-comment-reply :hover {
+    background-color: #fff;
 }

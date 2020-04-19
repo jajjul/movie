@@ -26,6 +26,15 @@ router.get('/', function (req, res, next) {
         date: "2020.04.13",
         voteCount: "10"
         }]
+        , list_R: [{
+          in_reply_author: "박태영",
+          in_reply_comment : "좋은 글 감사합니다.",
+          in_reply_date: "2020.04.19"
+        }, {
+          in_reply_author: "염다미",
+          in_reply_comment : "사랑해",
+          in_reply_date: "2020.04.19"
+        }]
     });
 });
 

@@ -134,32 +134,56 @@
                     <button class="comment-reply-btn" id="reply">답글</button>
                   </span>
                 </div>
-                <div class="reg-comment-reply" id="regReply">
-                  <table>
-                    <tr>
-                      <td>
-                        <textarea cols="30" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
-                      </td>
-                      <td>
-                        <button class="reg-btn">등록</button>
-                      </td>
-                    </tr>
-                  </table>
+                <form>
+                  <div class="reg-comment-reply" id="regReply">
+                    <table>
+                      <tr>
+                        <td>
+                          <textarea cols="40" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
+                        </td>
+                        <td>
+                          <button class="reg-btn">등록</button>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </form>
+              </div>
+              <% for(var i=0; i < list_R.length; i++) { %>
+              <div class="in-reply">
+                <div class="reply">
+                  <span class="in-reply-mark">
+                    ㄴ
+                  </span>
+                  <span style="display: inline-block;">
+                    <div class="reply-writer">
+                      <a href="#"><%= list_R[i].in_reply_author %></a>
+                    </div>
+                    <div class="comment">
+                      <p><%= list_R[i].in_reply_comment %></p>
+                    </div>
+                    <div class="comment-sub">
+                      <span class="comment-date"><%= list_R[i].date %></span>
+                    </div>
+                  </span>
                 </div>
               </div>
+              <% } %>
             </div>
-            <div class="reg-comment">
-              <table>
-                <tr>
-                  <td>
-                    <textarea cols="30" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
-                  </td>
-                  <td>
-                    <button class="reg-btn">등록</button>
-                  </td>
-                </tr>
-              </table>
-            </div>
+            <form>
+              <div class="reg-comment">
+                <table>
+                  <tr>
+                    <td>
+                      <textarea cols="40" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
+                    </td>
+                    <td>
+                      <button class="reg-btn">등록</button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </form>
             <div class="subheader">
               <div class="sbhdinfo">
                 <h2 class="sbhdtitle">

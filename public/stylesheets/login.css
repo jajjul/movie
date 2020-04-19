@@ -82,7 +82,5 @@ a {
 .sub-link-cv {
     display: inline-block;
     border-right: 1px solid #D8D8D8;
-    border-left: 1px solid #D8D8D8;
     padding-right: 5px;
-    padding-left: 5px;
 }
