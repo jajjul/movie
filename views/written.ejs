@@ -35,8 +35,7 @@
         </div>
       </div>
       <div class="contentcover">
-        <div class="cover">
-          <div class="bgimg"></div>
+        <div class="bgimg">
         </div>
         <div class="maincover">
           <div class="listcv">
@@ -120,16 +119,17 @@
             <div class="reply-header">
               댓글이<span class="reply-cnt">2</span>개 있습니다.
             </div>
+            <% for(var i=0; i < list_C.length; i++) { %>
             <div class="reply-cv">
               <div class="reply">
                 <div class="reply-writer">
-                  <a href="#">김마둠</a>
+                  <a href="#"><%= list_C[i].author %></a>
                 </div>
                 <div class="comment">
-                  <p>리뷰 재밌게 잘봤어요</p>
+                  <p><%= list_C[i].comment %></p>
                 </div>
                 <div class="comment-sub">
-                  <span class="comment-date">2020.04.09</span>
+                  <span class="comment-date"><%= list_C[i].date %></span>
                   <span class="comment-reply">
                     <button class="comment-reply-btn" id="reply">답글</button>
                   </span>
@@ -157,10 +157,10 @@
                   </span>
                   <span style="display: inline-block;">
                     <div class="reply-writer">
-                      <a href="#"><%= list_R[i].in_reply_author %></a>
+                      <a href="#"><%= list_R[i].author %></a>
                     </div>
                     <div class="comment">
-                      <p><%= list_R[i].in_reply_comment %></p>
+                      <p><%= list_R[i].comment %></p>
                     </div>
                     <div class="comment-sub">
                       <span class="comment-date"><%= list_R[i].date %></span>
@@ -170,6 +170,7 @@
               </div>
               <% } %>
             </div>
+            <% } %>
             <form>
               <div class="reg-comment">
                 <table>

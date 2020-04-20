@@ -27,13 +27,22 @@ router.get('/', function (req, res, next) {
         voteCount: "10"
         }]
         , list_R: [{
-          in_reply_author: "박태영",
-          in_reply_comment : "좋은 글 감사합니다.",
-          in_reply_date: "2020.04.19"
+          author: "박태영",
+          comment : "좋은 글 감사합니다.",
+          date: "2020.04.19"
         }, {
-          in_reply_author: "염다미",
-          in_reply_comment : "사랑해",
-          in_reply_date: "2020.04.19"
+          author: "염다미",
+          comment : "사랑해",
+          date: "2020.04.19"
+        }]
+        , list_C: [{
+          author: "김마둠",
+          comment : "글 재밌게 잘봣어요",
+          date: "2020.04.10"
+        }, {
+          author: "김우재",
+          comment : "쓰레기 같은 글",
+          date: "2020.04.20"
         }]
     });
 });

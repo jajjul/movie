@@ -12,9 +12,17 @@
       var next = document.getElementById("next");
       next.onclick = () => {
         if (total < (page + 1) * size) {
-            alert("마지막입니다.")
+            alert("마지막 페이지입니다.")
         } else {
           location.href = '?page=' + (page + 1) + '&size=' + size;
+        }
+      }
+      var back= document.getElementById("back")
+      back.onclick = () => {
+        if (page == 0) {
+          alert("첫 페이지입니다.")
+        } else {
+          location.href = '?page=' + (page - 1) + '&size=' + size;
         }
       }
     };
@@ -36,8 +44,7 @@
       </div>
     </div>
     <div class="contentcover">
-      <div class="cover">
-        <div class="bgimg"></div>
+      <div class="bgimg">
       </div>
       <div class="maincover">
         <div class="listcv">
@@ -128,7 +135,7 @@
                   <tr>
                     <td class="paging-writingbtn"><a href="#" class="a-btn">글쓰기</a></td>
                     <td class="paging-void"></td>
-                    <td class="paging-listbtn"><a id="previous" class="a-btn-p">☜ 이전</a></td>
+                    <td class="paging-listbtn"><a id="back" class="a-btn-p">☜ 이전</a></td>
                     <td class="paging-listbtn"><a id="next" class="a-btn">다음 ☞</a></td>
                   </tr>
                 </table>
