@@ -23,6 +23,7 @@ app.use('/written', require('./src/routes/written'));
 app.use('/login', require('./src/routes/login'));
 app.use('/join', require('./src/routes/join'));
 app.use('/helpid', require('./src/routes/helpid'));
+app.use('/modifying', require('./src/routes/modifying'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

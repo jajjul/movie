@@ -4,8 +4,7 @@ html body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color: #fff;
-}    
+}
 .wrap {
     display: inline-block;
     margin-top: 30px;
@@ -33,23 +32,30 @@ a {
     text-align: center;
     display: inline-block;
     border-radius: 4px;
-    background-color: whitesmoke;
+    background-color: #fff;
     padding: 20px;
-    padding-top: 30px;
+}
+.guide {
+    font-size: 20px;
+    height: 40px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.sub-guide {
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 5px;
 }
 .id-box {
-    margin-bottom: 20px;
     display: inline-block;
+    margin-bottom: 15px;
 }
 .box-cover {
     display: inline-block;
-    background-color: white;
-    border: 1px solid lightgray;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #ebeef1;
+    padding-bottom: 1px;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 4px;
 }
 .iptbox {
     margin: 0px;
@@ -57,44 +63,17 @@ a {
     border: 0;
     width: 400px;
     height: 31px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 10;
 }
-.email-box {
-    margin: 0px;
-    padding: 0;
-    border: 0;
-    width: 298px;
-    height: 31px;
-    font-size: 14px;
-    font-weight: 10;
-}
-.emailbox-cv {
-    margin-bottom: 20px;
-}
-.email-area {
-    display: inline-block;
-    background-color: white;
-    border: 1px solid lightgray;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 4px;
-}
-.verify-btn {
-    background-color: darkolivegreen;
-    border-radius: 4px;
-    border: 1px solid #dddfe4;
-    cursor: pointer;
+input {
     outline: none;
-    color: #fff;
-    height: 53px;
 }
-.join-btn-cv {
+.modify-btn-cv {
+    margin-top: 10px;
     width: 440px;
 }
-.join-btn {
+.modify-btn {
     background-color: darkolivegreen;
     border-radius: 4px;
     border: 1px solid #dddfe4;
