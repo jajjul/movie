@@ -321,3 +321,95 @@ li :active {
     border-radius: 4px;
     cursor: pointer;
 }
+.a-btn-p {
+    background-color: #fff;
+    text-align: center;
+    padding: 7px;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #dddfe4;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.title-column-cv {
+    background-color: #fff;
+    width: 728px;
+    border: 1px solid #ebeef1;
+}
+.title-column {
+    text-align: left;
+}
+.title-text {
+    display: inline-block;
+    width: 89px;
+    height: 27px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #F2F2F2;
+}
+.title-input {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    outline: none;
+    border: 0;
+    height: 44px;
+    width: 500px;
+    vertical-align: middle;
+}
+.type-selectbox {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    width: 109px;
+    height: 47px;
+}
+.content-column {
+    border: 1px solid #ebeef1;
+    text-align: left;
+    background-color: #fff;
+}
+.content-textbox {
+    resize: vertical;
+    font-size: 16px;
+    width: 704px;
+    height: 400px;
+    outline: none;
+    border: 0;
+    padding: 10px;
+}
+.writing-menu {
+    height: 30px;
+    border-left: 1px solid #ebeef1;
+    border-right: 1px solid #ebeef1;
+    text-align: left;
+}
+.picture-btn {
+    padding: 0;
+    margin: 0;
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+}
+.registration {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 7px;
+    background-color: #f8f9fa;
+}
+.registration-fix {
+    display: inline-block;
+}
+.r-btn {
+    background-color: #fff;
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 60px;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #dddfe4;
+    border-radius: 4px;
+    cursor: pointer;
+}

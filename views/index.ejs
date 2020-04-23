@@ -17,7 +17,7 @@
           location.href = '?page=' + (page + 1) + '&size=' + size;
         }
       }
-      var back= document.getElementById("back")
+      var back = document.getElementById("back")
       back.onclick = () => {
         if (page == 0) {
           alert("첫 페이지입니다.")
@@ -60,7 +60,7 @@
                   </div>
                   <a href="#">전체 게시물</a>
                 </div>
-                <a href="#">리뷰</a>
+                <a id="reviewbd">리뷰</a>
                 <a href="#">토론</a>
                 <a href="#">자유</a>
                 <a href="#">한국 영화</a>
@@ -133,9 +133,9 @@
               <div class="article-list-pagingcnt">
                 <table class="article-list-paginglist">
                   <tr>
-                    <td class="paging-writingbtn"><a href="#" class="a-btn">글쓰기</a></td>
+                    <td class="paging-writingbtn"><a href="//localhost:3000/write" class="a-btn">글쓰기</a></td>
                     <td class="paging-void"></td>
-                    <td class="paging-listbtn"><a id="back" class="a-btn-p">☜ 이전</a></td>
+                    <td class="paging-listbtn"><a id="back" class="a-btn">☜ 이전</a></td>
                     <td class="paging-listbtn"><a id="next" class="a-btn">다음 ☞</a></td>
                   </tr>
                 </table>
