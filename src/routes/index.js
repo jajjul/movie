@@ -34,31 +34,32 @@ router.get('/', async (req, res, next) => {
   ,vote_cnt as voteCount
   ,reg_type as type
   from movie
+  order by movie_id desc
   limit ? offset ?`, [size, page * size]);
 
   let list = data[0];
   for (var i = 0; i < list.length; i++) {
     var type = list[i].type;
     switch (type) {
-      case "리뷰":
+      case "review":
         list[i].type = "리뷰";
         break;
-      case "한국 영화":
+      case "kor":
         list[i].type = "한국 영화";
         break;
-      case "미국 영화":
+      case "USA":
         list[i].type = "미국 영화";
         break;
-      case "일본 영화":
+      case "jap":
         list[i].type = "일본 영화";
         break;
-      case "중국 영화":
+      case "chn":
           list[i].type = "중국 영화";
           break;  
-      case "토론":
+      case "discuss":
           list[i].type = "토론";
           break;
-      case "자유":
+      case "free":
           list[i].type = "자유";
           break;
       default:

@@ -149,7 +149,8 @@
                   </div>
                 </form>
               </div>
-              <% for(var i=0; i < list_R.length; i++) { %>
+              <% var replies = list_C[i].replies %>
+              <% for(var j=0; j < replies.length; j++) { %>
               <div class="in-reply">
                 <div class="reply">
                   <span class="in-reply-mark">
@@ -157,13 +158,13 @@
                   </span>
                   <span style="display: inline-block;">
                     <div class="reply-writer">
-                      <a href="#"><%= list_R[i].author %></a>
+                      <a href="#"><%= replies[j].author %></a>
                     </div>
                     <div class="comment">
-                      <p><%= list_R[i].comment %></p>
+                      <p><%= replies[j].comment %></p>
                     </div>
                     <div class="comment-sub">
-                      <span class="comment-date"><%= list_R[i].date %></span>
+                      <span class="comment-date"><%= replies[j].date %></span>
                     </div>
                   </span>
                 </div>

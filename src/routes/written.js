@@ -3,7 +3,35 @@ var router = express.Router();
 
 
 router.get('/', function (req, res, next) {
-    res.render('written', {
+  let list_C = [{
+    "author" : "김마둠",
+    "comment" : "글 재밌게 잘봣어요",
+    "date" : "2020.04.10",
+    "replies": [
+      {
+        "author" : "박태영",
+        "comment" : "좋은 글 감사합니다",
+        "date" : "2020.04.26"
+      },{
+        "author" : "염다미",
+        "comment" : "좋아요",
+        "date" : "2020.04.27"
+      }
+    ]
+  }, {
+    "author" : "김우재",
+    "comment" : "쓰레기 같은 글",
+    "date" : "2020.04.20",
+    "replies" : [
+      {
+        "author" : "박태영",
+        "comment" : "비판 감사합니다",
+        "date" : "2020.04.26"
+      }
+    ]
+  }];
+
+    return res.render('written', {
       title: '영화토크방', list: [{
         type: "리뷰",
         contentTitle: "국제시장 리뷰",
@@ -26,24 +54,7 @@ router.get('/', function (req, res, next) {
         date: "2020.04.13",
         voteCount: "10"
         }]
-        , list_R: [{
-          author: "박태영",
-          comment : "좋은 글 감사합니다.",
-          date: "2020.04.19"
-        }, {
-          author: "염다미",
-          comment : "사랑해",
-          date: "2020.04.19"
-        }]
-        , list_C: [{
-          author: "김마둠",
-          comment : "글 재밌게 잘봣어요",
-          date: "2020.04.10"
-        }, {
-          author: "김우재",
-          comment : "쓰레기 같은 글",
-          date: "2020.04.20"
-        }]
+        , list_C: list_C
     });
 });
 
