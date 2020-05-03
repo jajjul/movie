@@ -322,3 +322,68 @@ li :active {
     border-radius: 4px;
     cursor: pointer;
 }
+.headerlogoutbtn {
+    border-color: #fff;
+    background-color: transparent;
+    font-size: 12px;
+    padding-top: 8px;
+    padding-bottom: 7px;
+    width: 80px;
+    color: #fff;
+    margin-top: 12px;
+    display: none;
+}
+.headerlogoutbtn:hover {
+    opacity: 0.7;
+}
+.user_info {
+    font-size: 14px;
+    display: none;
+}
+.user_nick {
+    font-weight: 550;
+    font-size: 15px;
+}
+.listlogoutbtn {
+    font-size: 15px;
+    float: right;
+}
+.logoutbtn {
+    border: 0;
+    font-size: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: white;
+    background-color: darkolivegreen;
+}
+.logoutbtn:hover {
+    opacity: 0.7;
+}
+.user_modifying {
+    border-radius: 4px;
+    font-weight: 500;
+    float: right;
+    text-align: right;
+}
+.user_word {
+    border-radius: 4px;
+    font-weight: 500;
+    float: left;
+}
+.user_word:hover {
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.user_modifying:hover {
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+.info_wrap {
+    text-align: left;
+    margin-top: 2px;
+}
+.usermenu_wrap {
+    margin-top: 18px;
+}
