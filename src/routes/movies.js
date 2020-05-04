@@ -66,6 +66,9 @@ router.get('/', async (req, res, next) => {
       case "free":
           list[i].type = "자유";
           break;
+      case "others":
+          list[i].type = "기타 외화";
+          break;        
       default:
         list[i].type = "";
         break;

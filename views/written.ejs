@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/written.css'/>
-    <script type="text/javascript">
-      window.onload = () => {
-        var regReplyDisplay = true;
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/written.css' />
+  <script type="text/javascript">
+    var page = <%= page %>;
+    var size = <%= size %>;
+    var total = <%= total %>;
+    window.onload = () => {
+      var next = document.getElementById("next");
+      next.onclick = () => {
+        if (total < (page + 1) * size) {
+          alert("마지막 페이지입니다.")
+        } else {
+          location.href = '//localhost:3000/movies' + '?page=' + (page + 1) + '&size=' + size;
+        }
+      }
+
+      var back = document.getElementById("back")
+      back.onclick = () => {
+        if (page == 0) {
+          alert("첫 페이지입니다.")
+        } else {
+          location.href = '//localhost:3000/movies' + '?page=' + (page - 1) + '&size=' + size;
+        }
+      }
+
+      var hdlogin = document.getElementById("hdlogin")
+      var hdlogout = document.getElementById("hdlogout")
+      hdlogout.onclick = () => {
+        hdlogout.style.display = "none";
+        hdlogin.style.display = "block";
+      }
+
+      var regReplyDisplay = true;
         var reply = document.getElementById('reply');
         reply.onclick = () => {
           var regReply = document.getElementById('regReply');
@@ -18,245 +47,260 @@
         }
       }
     };
-    </script>
-  </head>
-  <body>
-    <div class="wrap">
-      <div class="header">
-        <div class="cover">
-          <div class="headercnt">
-            <div class="leftheader">
-              <a href="http://localhost:3000/"><span>MovieTalkRoom</span></a>
-            </div>
-            <div class="rightheader">
-              <button class="headerloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
-            </div>
+  </script>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="cover">
+        <div class="headercnt">
+          <div class="leftheader">
+            <a href="http://localhost:3000/"><span>MovieTalkRoom</span></a>
+          </div>
+          <div class="rightheader">
+            <button class="headerloginbtn" onclick="location.href='//localhost:3000/login'" id="hdlogin">로그인</button>
+            <button class="headerlogoutbtn" id="hdlogout">로그아웃</button>
           </div>
         </div>
       </div>
-      <div class="contentcover">
-        <div class="bgimg">
-        </div>
-        <div class="maincover">
-          <div class="listcv">
-            <div class="list">
-              <div class="listheader">
-                <button class="listloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
+    </div>
+    <div class="contentcover">
+      <div class="bgimg">
+      </div>
+      <div class="maincover">
+        <div class="listcv">
+          <div class="list">
+            <div class="listheader">
+              <button class="listloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
+              <div class="user_info">
+                <div class="info_wrap">
+                    <span class="user_nick">김마둠</span>님 환영합니다.
+                    <span class="listlogoutbtn">
+                        <button class="logoutbtn" id="logoutbtn">로그아웃</button>
+                    </span>
+                </div>
+                <div class="usermenu_wrap">
+                    <div class="user_word"><a>글목록</a></div>
+                    <div class="user_modifying"><a href="http://localhost:3000/modifying">회원정보수정</a></div>
+                </div>
               </div>
-              <div class="listmenucv">
-                <div class="listmenu">
-                  <div class="mainboard">
-                    <div class="mainbdtitle">
-                      홈
-                    </div>
-                    <a href="#">전체 게시물</a>
+            </div>
+            <div class="listmenucv">
+              <div class="listmenu">
+                <div class="mainboard">
+                  <div class="mainbdtitle">
+                    홈
                   </div>
-                  <a href="#">리뷰</a>
-                  <a href="#">토론</a>
-                  <a href="#">자유</a>
-                  <a href="#">한국 영화</a>
-                  <a href="#">중국 영화</a>
-                  <a href="#">일본 영화</a>
-                  <a href="#">미국 영화</a>
-                  <a href="#">기타 외화</a>
+                  <a href="http://localhost:3000/movies">전체 게시물</a>
+                </div>
+                <a href="http://localhost:3000/movies/review">리뷰</a>
+                <a href="http://localhost:3000/movies/discuss">토론</a>
+                <a href="http://localhost:3000/movies/free">자유</a>
+                <a href="http://localhost:3000/movies/kor">한국 영화</a>
+                <a href="http://localhost:3000/movies/chn">중국 영화</a>
+                <a href="http://localhost:3000/movies/jap">일본 영화</a>
+                <a href="http://localhost:3000/movies/USA">미국 영화</a>
+                <a href="http://localhost:3000/movies/others">기타 외화</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subcv">
+          <div class="article-header">
+            <div class="article-title">
+              국제시장 리뷰<em class="article-title-em">[2]</em>
+            </div>
+            <div class="article-meta">
+              <div class="article-meta-writer">
+                <a href="#">박태영</a>
+              </div>
+              <div class="aricle-meta-itemlistcv">
+                <div class="aricle-meta-itemlist">
+                  <div class="article-meta-date">
+                    <span>2020.4.02</span>
+                  </div>
+                  <div class="article-meta-viewcnt">
+                    <span>1000</span>
+                    <span> 읽음</span>
+                  </div>
+                  <div class="article-meta-vote">
+                    <span>추천:</span>
+                    <span>25</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="subcv">
-            <div class="article-header">
-              <div class="article-title">
-                국제시장 리뷰<em class="article-title-em">[2]</em>
-              </div>
-              <div class="article-meta">
-                <div class="article-meta-writer">
-                  <a href="#">박태영</a>
-                </div>
-                <div class="aricle-meta-itemlistcv">
-                  <div class="aricle-meta-itemlist">
-                    <div class="article-meta-date">
-                      <span>2020.4.02</span>
-                    </div>
-                    <div class="article-meta-viewcnt">
-                      <span>1000</span>
-                      <span> 읽음</span>
-                    </div>
-                    <div class="article-meta-vote">
-                      <span>추천:</span>
-                      <span>25</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="article-content">
-              <p>
-                매우 재미있었다
-              </p>
-            </div>
-            <div class="article-box">
-              <div id="postvote">
-                <div class="article-vote">
-                  <table class="article-vote-list">
-                    <tr>
-                      <td class="article-vote-upbtn">
-                        <button>
-                          <span>추천</span>
-                          <span class="vote-cnt">30</span>
-                        </button>
-                      </td>
-                      <td class="article-vote-downbtn">
-                        <button>
-                          <span>비추천</span>
-                          <span class="vote-cnt">5</span>
-                        </button>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-            <div class="reply-header">
-              댓글이<span class="reply-cnt">2</span>개 있습니다.
-            </div>
-            <% for(var i=0; i < list_C.length; i++) { %>
-            <div class="reply-cv">
-              <div class="reply">
-                <div class="reply-writer">
-                  <a href="#"><%= list_C[i].author %></a>
-                </div>
-                <div class="comment">
-                  <p><%= list_C[i].comment %></p>
-                </div>
-                <div class="comment-sub">
-                  <span class="comment-date"><%= list_C[i].date %></span>
-                  <span class="comment-reply">
-                    <button class="comment-reply-btn" id="reply">답글</button>
-                  </span>
-                </div>
-                <form>
-                  <div class="reg-comment-reply" id="regReply">
-                    <table>
-                      <tr>
-                        <td>
-                          <textarea cols="40" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
-                        </td>
-                        <td>
-                          <button class="reg-btn">등록</button>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                </form>
-              </div>
-              <% var replies = list_C[i].replies %>
-              <% for(var j=0; j < replies.length; j++) { %>
-              <div class="in-reply">
-                <div class="reply">
-                  <span class="in-reply-mark">
-                    ㄴ
-                  </span>
-                  <span style="display: inline-block;">
-                    <div class="reply-writer">
-                      <a href="#"><%= replies[j].author %></a>
-                    </div>
-                    <div class="comment">
-                      <p><%= replies[j].comment %></p>
-                    </div>
-                    <div class="comment-sub">
-                      <span class="comment-date"><%= replies[j].date %></span>
-                    </div>
-                  </span>
-                </div>
-              </div>
-              <% } %>
-            </div>
-            <% } %>
-            <form>
-              <div class="reg-comment">
-                <table>
+          <div class="article-content">
+            <p>
+              매우 재미있었다
+            </p>
+          </div>
+          <div class="article-box">
+            <div id="postvote">
+              <div class="article-vote">
+                <table class="article-vote-list">
                   <tr>
-                    <td>
-                      <textarea cols="40" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
+                    <td class="article-vote-upbtn">
+                      <button id="up_btn">
+                        <span>추천</span>
+                        <span class="vote-cnt">30</span>
+                      </button>
                     </td>
-                    <td>
-                      <button class="reg-btn">등록</button>
+                    <td class="article-vote-downbtn">
+                      <button id="down_btn">
+                        <span>비추천</span>
+                        <span class="vote-cnt">5</span>
+                      </button>
                     </td>
                   </tr>
                 </table>
               </div>
-            </form>
-            <div class="subheader">
-              <div class="sbhdinfo">
-                <h2 class="sbhdtitle">
-                  <a href="#">전체 게시물</a>
-                </h2>
-              </div>
-              <div class="submenu">
-                <ul class="submnlink">
-                  <li><span><a href>조회순</a></span></li>
-                  <li><span><a href>추천순</a></span></li>
-                  <li><span><a href>댓글순</a></span></li>
-                  </li>
-                </ul>
-                <div class="sbhdsearch">
-                  <form action="movies">
-                    <label style="padding: 0;">
-                      <select name="target" class="selectsearch">
-                        <option value="title">제목</option>
-                        <option value="user_id">작성자</option>
-                      </select>
-                    </label>
-                    <input type="text" name="search" class="inputsearch" placeholder="검색">
-                  </form>
-                </div>
-              </div>
             </div>
-            <section class="articlelist">
-              <div class="article-hover">
-                <% for(var i=0; i < list.length; i++) { %>
-                <article class="article-list-item">
-                  <div class="article-list-bdname">
-                  <%= list[i].type %>
-                  </div>
-                  <div class="article-list-cnt">
-                    <div class="article-list-titlecv">
-                      <a href="#">
-                        <div class="article-list-title">
-                          <span><%= list[i].contentTitle %></span>
-                          <em>[<%= list[i].commentCount %>]</em>
-                        </div>
-                      </a>  
-                    </div>
-                    <div class="writer">
-                      <a href="#"><%= list[i].author %></a>
-                    </div>
-                    <div class="article-list-date">
-                      <span><%= list[i].date %></span>
-                    </div>
-                    <div class="article-list-vote">
-                      <span>△</span>
-                      <span><%= list[i].voteCount %></span>
-                    </div>
-                  </div>
-                </article>
-                <% } %>
+          </div>
+          <div class="reply-header">
+            댓글이<span class="reply-cnt">2</span>개 있습니다.
+          </div>
+          <% for(var i=0; i < list_C.length; i++) { %>
+          <div class="reply-cv">
+            <div class="reply">
+              <div class="reply-writer">
+                <a href="#"><%= list_C[i].author %></a>
               </div>
-              <section class="article-list-paging">
-                <div class="article-list-pagingcnt">
-                  <table class="article-list-paginglist">
+              <div class="comment">
+                <p><%= list_C[i].comment %></p>
+              </div>
+              <div class="comment-sub">
+                <span class="comment-date"><%= list_C[i].date %></span>
+                <span class="comment-reply">
+                  <button class="comment-reply-btn" id="reply">답글</button>
+                </span>
+              </div>
+              <form>
+                <div class="reg-comment-reply" id="regReply">
+                  <table>
                     <tr>
-                      <td class="paging-writingbtn"><a href="#" class="a-btn">글쓰기</a></td>
-                      <td class="paging-void"></td>
-                      <td class="paging-listbtn"><a href="#" class="a-btn">다음 >></a></td>
+                      <td>
+                        <textarea cols="40" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
+                      </td>
+                      <td>
+                        <button class="reg-btn">등록</button>
+                      </td>
                     </tr>
                   </table>
                 </div>
-              </section>
-            </section>
+              </form>
+            </div>
+            <% var replies = list_C[i].replies %>
+            <% for(var j=0; j < replies.length; j++) { %>
+            <div class="in-reply">
+              <div class="reply">
+                <span class="in-reply-mark">
+                  ㄴ
+                </span>
+                <span style="display: inline-block;">
+                  <div class="reply-writer">
+                    <a href="#"><%= replies[j].author %></a>
+                  </div>
+                  <div class="comment">
+                    <p><%= replies[j].comment %></p>
+                  </div>
+                  <div class="comment-sub">
+                    <span class="comment-date"><%= replies[j].date %></span>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <% } %>
           </div>
-        </div> 
-      </div>  
+          <% } %>
+          <form>
+            <div class="reg-comment">
+              <table>
+                <tr>
+                  <td>
+                    <textarea cols="40" placeholder="내용을 입력하세요" class="reg-comment-content"></textarea>
+                  </td>
+                  <td>
+                    <button class="reg-btn">등록</button>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </form>
+          <div class="subheader">
+            <div class="sbhdinfo">
+              <h2 class="sbhdtitle">
+                <a href="#">전체 게시물</a>
+              </h2>
+            </div>
+            <div class="submenu">
+              <ul class="submnlink">
+                <li><span><a href>조회순</a></span></li>
+                <li><span><a href>추천순</a></span></li>
+                <li><span><a href>댓글순</a></span></li>
+                </li>
+              </ul>
+              <div class="sbhdsearch">
+                <form action="">
+                  <label style="padding: 0;">
+                    <select name="target" class="selectsearch">
+                      <option value="title">제목</option>
+                      <option value="user_id">작성자</option>
+                    </select>
+                  </label>
+                  <input type="text" name="search" class="inputsearch" placeholder="검색">
+                </form>
+              </div>
+            </div>
+          </div>
+          <section class="articlelist">
+            <div class="article-hover">
+              <% for(var i=0; i < list.length; i++) { %>
+              <article class="article-list-item">
+                <div class="article-list-bdname">
+                  <%= list[i].type %>
+                </div>
+                <div class="article-list-cnt">
+                  <div class="article-list-titlecv">
+                    <a href="#">
+                      <div class="article-list-title">
+                        <span><%= list[i].contentTitle %></span>
+                        <em>[<%= list[i].commentCount %>]</em>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="writer">
+                    <a href="#"><%= list[i].author %></a>
+                  </div>
+                  <div class="article-list-date">
+                    <span><%= list[i].date %></span>
+                  </div>
+                  <div class="article-list-vote">
+                    <span>△</span>
+                    <span><%= list[i].voteCount %></span>
+                  </div>
+                </div>
+              </article>
+              <% } %>
+            </div>
+            <section class="article-list-paging">
+              <div class="article-list-pagingcnt">
+                <table class="article-list-paginglist">
+                  <tr>
+                    <td class="paging-writingbtn"><a href="//localhost:3000/write" class="a-btn">글쓰기</a></td>
+                    <td class="paging-void"></td>
+                    <td class="paging-listbtn"><a id="back" class="a-btn">☜ 이전</a></td>
+                    <td class="paging-listbtn"><a id="next" class="a-btn">다음 ☞</a></td>
+                  </tr>
+                </table>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
