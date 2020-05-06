@@ -80,7 +80,8 @@ router.get('/', async (req, res, next) => {
     page: page,
     size: size,
     total: total,
-    list: list
+    list: list,
+    order: order
   });
 });
 
@@ -163,7 +164,8 @@ router.get('/:regType', async (req, res, next) => {
     page: page,
     size: size,
     total: total,
-    list: list
+    list: list,
+    order: order
   });
 });
 

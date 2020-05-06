@@ -8,6 +8,7 @@
     var page = <%= page %>;
     var size = <%= size %>;
     var total = <%= total %>;
+    var order = "<%= order %>";
     window.onload = () => {
       var next = document.getElementById("next");
       next.onclick = () => {
@@ -22,7 +23,7 @@
         if (page == 0) {
           alert("첫 페이지입니다.")
         } else {
-          location.href = '?page=' + (page - 1) + '&size=' + size;
+          location.href = '?page=' + (page - 1) + '&size=' + size + '&order=' + order;
         }
       }
       var hdlogin = document.getElementById("hdlogin")
@@ -30,6 +31,42 @@
       hdlogout.onclick = () => {
           hdlogout.style.display = "none";
           hdlogin.style.display = "block";
+      }
+      var viewdesc = document.getElementById("viewdesc");
+      viewdesc.onclick = () => {
+        if (order != "view_cnt") {
+          location.href = '/movies?order=view_cnt';
+        } else if(order == "view_cnt") {
+          location.href = '?order=movie_id';
+        }
+      }
+      if (order == "view_cnt") {
+        viewdesc.style.backgroundColor = "#dddfe4";
+        viewdesc.style.borderRadius = "4px";
+      }
+      var votedesc = document.getElementById("votedesc");
+      votedesc.onclick = () => {
+        if (order != "vote_cnt") {
+          location.href = '/movies?order=vote_cnt';
+        } else if(order == "vote_cnt") {
+          location.href = '?order=movie_id';
+        }
+      }
+      if (order == "vote_cnt") {
+        votedesc.style.backgroundColor = "#dddfe4";
+        votedesc.style.borderRadius = "4px";
+      }
+      var cmtdesc = document.getElementById("cmtdesc");
+      cmtdesc.onclick = () => {
+        if (order != "comment_cnt") {
+          location.href = '/movies?order=comment_cnt';
+        } else if(order == "comment_cnt") {
+          location.href = '?order=movie_id';
+        }
+      }
+      if (order == "comment_cnt") {
+        cmtdesc.style.backgroundColor = "#dddfe4";
+        cmtdesc.style.borderRadius = "4px";
       }
     };
   </script>
@@ -100,9 +137,9 @@
             </div>
             <div class="submenu">
               <ul class="submnlink">
-                <li><span><a href>조회순</a></span></li>
-                <li><span><a href>추천순</a></span></li>
-                <li><span><a href>댓글순</a></span></li>
+                <li><span><a id="viewdesc">조회순</a></span></li>
+                <li><span><a id="votedesc">추천순</a></span></li>
+                <li><span><a id="cmtdesc">댓글순</a></span></li>
                 </li>
               </ul>
               <div class="sbhdsearch">

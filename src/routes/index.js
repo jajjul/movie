@@ -6,6 +6,7 @@ const pool = require('../database/pool')
 router.get('/', async (req, res, next) => {
   let size = Number(req.query.size);
   let page = Number(req.query.page);
+  let order = req.query.order;
 
   // 첫페이지
   if (isNaN(size)) {
@@ -13,6 +14,9 @@ router.get('/', async (req, res, next) => {
   }
   if (isNaN(page)) {
     page = 0
+  }
+  if (order == undefined) {
+    order = 'movie_id'
   }
 
   const count = await pool.query(`
@@ -76,7 +80,8 @@ router.get('/', async (req, res, next) => {
     page: page,
     size: size,
     total: total,
-    list: list
+    list: list,
+    order: order
   });
 });
 

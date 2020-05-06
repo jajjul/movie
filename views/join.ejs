@@ -3,6 +3,29 @@
     <head>
         <title><%= title %></title>
         <link rel='stylesheet' href='/stylesheets/join.css' />
+        <script type="text/javascript">
+            window.onload = () => {
+                var joinBtn = document.getElementById('joinBtn');
+                
+                joinBtn.onclick = () => {
+                    fetch('/join', {
+                        method: 'post',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    })
+                    .then(res => {
+                        if (res.status == 200) {
+                            return res.json();
+                        }
+                    })
+                    .then(json => {
+                        alert(JSON.stringify(json))
+                    })
+                };
+
+            }
+        </script>
     </head>
     <body>
         <div class="wrap">
@@ -10,7 +33,7 @@
                 <div class="logo">
                     <a href="http://localhost:3000/">MovieTalkRoom</a>
                 </div>
-                <form>
+                <form id="joinForm">
                     <div class="maincontent">
                         <div class="id-box">
                             <span class="box-cover">
@@ -41,7 +64,7 @@
                             </span>
                         </div>
                         <div class="join-btn-cv">
-                            <button class="join-btn">가입하기</button>
+                            <button id="joinBtn" class="join-btn">가입하기</button>
                         </div>
                     </div>
                 </form>
