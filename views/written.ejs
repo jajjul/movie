@@ -8,43 +8,65 @@
     var page = <%= page %>;
     var size = <%= size %>;
     var total = <%= total %>;
+    var order = "<%= order %>";
     window.onload = () => {
       var next = document.getElementById("next");
       next.onclick = () => {
         if (total < (page + 1) * size) {
           alert("마지막 페이지입니다.")
         } else {
-          location.href = '//localhost:3000/movies' + '?page=' + (page + 1) + '&size=' + size;
+          location.href = '?page=' + (page + 1) + '&size=' + size + '&order=' + order;
         }
       }
-
       var back = document.getElementById("back")
       back.onclick = () => {
         if (page == 0) {
           alert("첫 페이지입니다.")
         } else {
-          location.href = '//localhost:3000/movies' + '?page=' + (page - 1) + '&size=' + size;
+          location.href = '?page=' + (page - 1) + '&size=' + size + '&order=' + order;
         }
       }
-
       var hdlogin = document.getElementById("hdlogin")
       var hdlogout = document.getElementById("hdlogout")
       hdlogout.onclick = () => {
         hdlogout.style.display = "none";
         hdlogin.style.display = "block";
       }
-
-      var regReplyDisplay = true;
-        var reply = document.getElementById('reply');
-        reply.onclick = () => {
-          var regReply = document.getElementById('regReply');
-          if (regReplyDisplay == true) {
-              regReply.style.display = "block";
-              regReplyDisplay = false;
-          } else {
-              regReply.style.display = "none";
-              regReplyDisplay = true;
+      var viewdesc = document.getElementById("viewdesc");
+      viewdesc.onclick = () => {
+        if (order != "view_cnt") {
+          location.href = '?order=view_cnt';
+        } else if (order == "view_cnt") {
+          location.href = '?order=movie_id';
         }
+      }
+      if (order == "view_cnt") {
+        viewdesc.style.backgroundColor = "#dddfe4";
+        viewdesc.style.borderRadius = "4px";
+      }
+      var votedesc = document.getElementById("votedesc");
+      votedesc.onclick = () => {
+        if (order != "vote_cnt") {
+          location.href = '?order=vote_cnt';
+        } else if (order == "vote_cnt") {
+          location.href = '?order=movie_id';
+        }
+      }
+      if (order == "vote_cnt") {
+        votedesc.style.backgroundColor = "#dddfe4";
+        votedesc.style.borderRadius = "4px";
+      }
+      var cmtdesc = document.getElementById("cmtdesc");
+      cmtdesc.onclick = () => {
+        if (order != "comment_cnt") {
+          location.href = '?order=comment_cnt';
+        } else if (order == "comment_cnt") {
+          location.href = '?order=movie_id';
+        }
+      }
+      if (order == "comment_cnt") {
+        cmtdesc.style.backgroundColor = "#dddfe4";
+        cmtdesc.style.borderRadius = "4px";
       }
     };
   </script>
@@ -75,14 +97,14 @@
               <button class="listloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
               <div class="user_info">
                 <div class="info_wrap">
-                    <span class="user_nick">김마둠</span>님 환영합니다.
-                    <span class="listlogoutbtn">
-                        <button class="logoutbtn" id="logoutbtn">로그아웃</button>
-                    </span>
+                  <span class="user_nick">김마둠</span>님 환영합니다.
+                  <span class="listlogoutbtn">
+                    <button class="logoutbtn" id="logoutbtn">로그아웃</button>
+                  </span>
                 </div>
                 <div class="usermenu_wrap">
-                    <div class="user_word"><a>글목록</a></div>
-                    <div class="user_modifying"><a href="http://localhost:3000/modifying">회원정보수정</a></div>
+                  <div class="user_word"><a>글목록</a></div>
+                  <div class="user_modifying"><a href="http://localhost:3000/modifying">회원정보수정</a></div>
                 </div>
               </div>
             </div>
@@ -192,8 +214,8 @@
                 </div>
               </form>
             </div>
-            <% var replies = list_C[i].replies %>
-            <% for(var j=0; j < replies.length; j++) { %>
+            <% for(var j=0; j < list_R.length; j++) { %>
+            <% if (list_R[j].commentId == list_C[i].commentId) { %>
             <div class="in-reply">
               <div class="reply">
                 <span class="in-reply-mark">
@@ -201,17 +223,18 @@
                 </span>
                 <span style="display: inline-block;">
                   <div class="reply-writer">
-                    <a href="#"><%= replies[j].author %></a>
+                    <a href="#"><%= list_R[j].author %></a>
                   </div>
                   <div class="comment">
-                    <p><%= replies[j].comment %></p>
+                    <p><%= list_R[j].comment %></p>
                   </div>
                   <div class="comment-sub">
-                    <span class="comment-date"><%= replies[j].date %></span>
+                    <span class="comment-date"><%= list_R[j].date %></span>
                   </div>
                 </span>
               </div>
             </div>
+            <% } %>
             <% } %>
           </div>
           <% } %>
@@ -237,9 +260,9 @@
             </div>
             <div class="submenu">
               <ul class="submnlink">
-                <li><span><a href>조회순</a></span></li>
-                <li><span><a href>추천순</a></span></li>
-                <li><span><a href>댓글순</a></span></li>
+                <li><span><a id="viewdesc">조회순</a></span></li>
+                <li><span><a id="votedesc">추천순</a></span></li>
+                <li><span><a id="cmtdesc">댓글순</a></span></li>
                 </li>
               </ul>
               <div class="sbhdsearch">
@@ -303,4 +326,5 @@
     </div>
   </div>
 </body>
+
 </html>

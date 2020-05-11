@@ -13,7 +13,7 @@
       var next = document.getElementById("next");
       next.onclick = () => {
         if (total < (page + 1) * size) {
-            alert("마지막 페이지입니다.")
+          alert("마지막 페이지입니다.")
         } else {
           location.href = '?page=' + (page + 1) + '&size=' + size + '&order=' + order;
         }
@@ -29,14 +29,14 @@
       var hdlogin = document.getElementById("hdlogin")
       var hdlogout = document.getElementById("hdlogout")
       hdlogout.onclick = () => {
-          hdlogout.style.display = "none";
-          hdlogin.style.display = "block";
+        hdlogout.style.display = "none";
+        hdlogin.style.display = "block";
       }
       var viewdesc = document.getElementById("viewdesc");
       viewdesc.onclick = () => {
         if (order != "view_cnt") {
           location.href = '/movies?order=view_cnt';
-        } else if(order == "view_cnt") {
+        } else if (order == "view_cnt") {
           location.href = '?order=movie_id';
         }
       }
@@ -48,7 +48,7 @@
       votedesc.onclick = () => {
         if (order != "vote_cnt") {
           location.href = '/movies?order=vote_cnt';
-        } else if(order == "vote_cnt") {
+        } else if (order == "vote_cnt") {
           location.href = '?order=movie_id';
         }
       }
@@ -60,7 +60,7 @@
       cmtdesc.onclick = () => {
         if (order != "comment_cnt") {
           location.href = '/movies?order=comment_cnt';
-        } else if(order == "comment_cnt") {
+        } else if (order == "comment_cnt") {
           location.href = '?order=movie_id';
         }
       }
@@ -97,14 +97,14 @@
               <button class="listloginbtn" onclick="location.href='//localhost:3000/login'">로그인</button>
               <div class="user_info">
                 <div class="info_wrap">
-                    <span class="user_nick">김마둠</span>님 환영합니다.
-                    <span class="listlogoutbtn">
-                        <button class="logoutbtn" id="logoutbtn">로그아웃</button>
-                    </span>
+                  <span class="user_nick">김마둠</span>님 환영합니다.
+                  <span class="listlogoutbtn">
+                    <button class="logoutbtn" id="logoutbtn">로그아웃</button>
+                  </span>
                 </div>
                 <div class="usermenu_wrap">
-                    <div class="user_word"><a>글목록</a></div>
-                    <div class="user_modifying"><a href="http://localhost:3000/modifying">회원정보수정</a></div>
+                  <div class="user_word"><a>글목록</a></div>
+                  <div class="user_modifying"><a href="http://localhost:3000/modifying">회원정보수정</a></div>
                 </div>
               </div>
             </div>
@@ -203,4 +203,5 @@
     </div>
   </div>
 </body>
+
 </html>

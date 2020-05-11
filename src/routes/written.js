@@ -7,34 +7,32 @@ router.get('/', async (req, res, next) => {
   let page = Number(req.query.page);
   let order = req.query.order;
 
-  let list_C = [{
-    "author" : "김마둠",
-    "comment" : "글 재밌게 잘봣어요",
-    "date" : "2020.04.10",
-    "replies": [
-      {
-        "author" : "박태영",
-        "comment" : "좋은 글 감사합니다",
-        "date" : "2020.04.26"
-      },{
-        "author" : "염다미",
-        "comment" : "좋아요",
-        "date" : "2020.04.27"
-      }
-    ]
-  }, {
-    "author" : "김우재",
-    "comment" : "쓰레기 같은 글",
-    "date" : "2020.04.20",
-    "replies" : [
-      {
-        "author" : "박태영",
-        "comment" : "비판 감사합니다",
-        "date" : "2020.04.26"
-      }
-    ]
-  }];
+  const dataC = await pool.query(`
+  select
+  comment_id as commentId
+  ,movie_id as movieId
+  ,content as comment
+  ,reg_user_id as userId
+  ,reg_nickname as author
+  ,date_format(reg_dt, '%Y.%m.%d') as date
+  from comments`
+  );
 
+  let list_C = dataC[0];
+
+  const dataR = await pool.query(`
+  select
+  comment_id as commentId
+  ,replies_id as repliesId
+  ,content as comment
+  ,reg_user_id as userId
+  ,reg_nickname as author
+  ,date_format(reg_dt, '%Y.%m.%d') as date
+  from replies`
+  );
+
+  let list_R = dataR[0];
+  
   if (isNaN(size)) {
     size = 10
   }
@@ -107,7 +105,9 @@ router.get('/', async (req, res, next) => {
       size: size,
       total: total,
       list: list,
-      list_C: list_C
+      order: order,
+      list_C: list_C,
+      list_R: list_R
     });
 });
 
@@ -117,34 +117,32 @@ router.get('/:regType', async (req, res, next) => {
   let regType = req.params.regType;
   let order = req.query.order;
 
-  let list_C = [{
-    "author" : "김마둠",
-    "comment" : "글 재밌게 잘봣어요",
-    "date" : "2020.04.10",
-    "replies": [
-      {
-        "author" : "박태영",
-        "comment" : "좋은 글 감사합니다",
-        "date" : "2020.04.26"
-      },{
-        "author" : "염다미",
-        "comment" : "좋아요",
-        "date" : "2020.04.27"
-      }
-    ]
-  }, {
-    "author" : "김우재",
-    "comment" : "쓰레기 같은 글",
-    "date" : "2020.04.20",
-    "replies" : [
-      {
-        "author" : "박태영",
-        "comment" : "비판 감사합니다",
-        "date" : "2020.04.26"
-      }
-    ]
-  }];
-  // 첫페이지
+  const dataC = await pool.query(`
+  select
+  comment_id as commentId
+  ,movie_id as movieId
+  ,content as comment
+  ,reg_user_id as userId
+  ,reg_nickname as author
+  ,date_format(reg_dt, '%Y.%m.%d') as date
+  from comments`
+  );
+
+  let list_C = dataC[0];
+
+  const dataR = await pool.query(`
+  select
+  comment_id as commentId
+  ,replies_id as repliesId
+  ,content as comment
+  ,reg_user_id as userId
+  ,reg_nickname as author
+  ,date_format(reg_dt, '%Y.%m.%d') as date
+  from replies`
+  );
+
+  let list_R = dataR[0];
+
   if (isNaN(size)) {
     size = 10
   }
@@ -218,7 +216,9 @@ router.get('/:regType', async (req, res, next) => {
     size: size,
     total: total,
     list: list,
-    list_C: list_C
+    order: order,
+    list_C: list_C,
+    list_R: list_R
   });
 });
 
